@@ -14,7 +14,7 @@
     
 }
 .anibox img:hover{
-    width: 70px;
+    width: 50px;
     content: url(./dish-icon.svg);
 }
 @keyframes mydish {
