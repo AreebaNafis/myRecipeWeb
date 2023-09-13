@@ -3,8 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style-type: none;
+}
 .anibox>img{
     animation-name: mydish;
     animation-duration: 1s;
@@ -38,15 +43,24 @@
 .btn{
     width: 115px;
 }
+.btn2{
+    width: 130px;
+    background-color: #48718f;
+}
 
 
 
 .collapse.navbar-collapse .btn{
     width: 100%;
 }
-.navbar-brand span{
+.navbar-brand span {
     font-weight: 600;
     margin-left: 10px;
+    font-family: 'Noto Serif Display', serif;
+}
+h2{
+    font-weight: 400;
+    color: rgb(92, 73, 59);
     font-family: 'Noto Serif Display', serif;
 }
 html {
@@ -123,11 +137,13 @@ main {
 .flexItem .btn{
     background-color: #48718f;
 }
+.myimg{
+    border-radius: 50%;
+    border: 2px solid black;
+}
 
 @media (max-width:984px){
-   
-
-    ul.navbar-nav{
+      ul.navbar-nav{
         width: 100%;
         display: block;
     }
@@ -139,4 +155,28 @@ main {
         justify-content: space-around;
        }
 }
+.contactMe{
+    position: absolute;
+    z-index: 55;
+    top: 0%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactMe .card{ 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(112, 160, 188);
+    box-shadow: inset 2px 2px 5px, inset -2px -2px 5px;
+    line-height: 2.5;
+    padding: 30px;
+}
+.contactMe span{
+    font-family: 'Noto Serif Display', serif;
+    font-weight: 600;
+}
 
+.hidden{
+    display: none;
+}
