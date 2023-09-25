@@ -176,7 +176,42 @@ main {
     font-family: 'Noto Serif Display', serif;
     font-weight: 600;
 }
+.infoBox.card{
+    background-color: rgb(101, 106, 109);
+    padding-bottom: 3px;
+    position: absolute;
+    z-index: 1024;
+    top: 0%;
+    padding: 0 3px;
+    border: 1px solid #0f212e;
+}
 
 .hidden{
     display: none;
 }
+.infoBtn:hover + .hidden{
+    display: block;
+ }
+
+
+.timeBox{
+    margin-left: 5px;
+    font-weight: 500;
+    color: black;
+    border: 1px solid;
+    padding: 3px;
+}
+
+.timeBox button{
+    background-color:#48718f ;
+    border: none;
+}
+ .timeBox button svg{
+    border: none;
+    margin-bottom: 5px;
+    background-color:#48718f ;
+ }
+
+ 
+
+ 
