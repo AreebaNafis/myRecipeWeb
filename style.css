@@ -9,7 +9,70 @@ a{
 }
 ul{
     list-style-type: none;
+    padding-left: 0%;
 }
+
+/* recipe card styling */
+.ingredients, .instructions{
+    margin-top: 2rem;
+    text-align: justify;
+}
+.ingredients li{
+    list-style-type: square;
+}
+.instructions li{
+    margin-bottom: 1em;
+    list-style-type: none;
+}
+.instructions span {
+    font-weight: 600;
+}
+
+.recipeHead{
+    background-color: #a4cbe6c3;
+    border-radius: 100%;
+}
+.recipeHead>h3{
+    margin: 1rem 0;
+    font-family: 'Noto Serif Display', serif;
+    font-weight: 800;
+}
+.recipeCard h4{
+  font-family:  'Noto Serif Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+.recipeCard{
+    padding: 2rem;
+    background-color: aliceblue;
+    box-shadow: 1px 1px 4px #0f212e, -1px -1px 4px #0f212e;
+}
+
+.recipeCard img{
+    
+    border-radius: 5%;
+    border: .5px solid rgba(0, 0, 0, 0.234);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pageitem>button{
+    background-color:#5989ac;
+    margin: 3px;
+}
+.cPC{
+    width: 4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.currPage{
+    font-family:  'Noto Serif Display', serif;
+    font-weight: 600;
+    width: 4rem;
+    
+}
+/* rpp end */
 .anibox>img{
     animation-name: mydish;
     animation-duration: 1s;
@@ -19,10 +82,10 @@ ul{
 }
 .anibox img:hover{
     width: 50px;
-    content: url(./dish-icon.svg);
+    content: url(./assets/dish-icon.svg);
 }
 .anibox img:hover::after{
-    content: url(./food.png);
+    content: url(./assets/food.png);
     width: 43;
     height: 43;
 }
@@ -40,9 +103,7 @@ ul{
         transform: rotate(-30deg);
     }
 }
-.btn{
-    width: 115px;
-}
+
 .btn2{
     width: 130px;
     background-color: #48718f;
@@ -52,15 +113,17 @@ ul{
 
 .collapse.navbar-collapse .btn{
     width: 100%;
+    transition: all ease-in-out 0.5s;
 }
+
 .navbar-brand span {
     font-weight: 600;
     margin-left: 10px;
     font-family: 'Noto Serif Display', serif;
 }
-h2{
-    font-weight: 400;
-    color: rgb(92, 73, 59);
+h2,h5{
+    font-weight: 800;
+    color: black;
     font-family: 'Noto Serif Display', serif;
 }
 html {
@@ -111,6 +174,99 @@ main {
     overflow: hidden;
 }
 
+
+/* notes app */
+/* I is for textarea input */
+.flex-I{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+
+.titleI{
+    border: .5px solid rgba(0, 0, 0, 0.526);
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom: none;
+    padding: 0 4px;
+}
+.noteI{
+    border: .5px solid rgba(0, 0, 0, 0.526);
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top: none;
+    padding: 0 4px;
+}
+.pinned li{
+    border-color: black;
+    border-width: 2px;
+}
+
+.aside2 {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    position: absolute; 
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    background-color: #c9e1f2fc;
+}
+p{
+    margin: 0%;
+    padding: 2px;
+}
+
+.add-btn{
+   position: absolute;
+   left: 14.5rem;
+   bottom: -0.5rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   border-radius: 50%;
+   background: #5989ac;
+}
+.pin-btn, .del-btn{
+    border-radius: 30%;
+   background: #5989ac;
+}
+.btnDiv{
+    padding-top: .5rem;
+}
+
+
+/* render notes  */
+.flex-ul{
+    display: flex;
+    flex-wrap: wrap; 
+    padding-left: 0%;
+}
+.note{
+    border: .5px solid rgba(0, 0, 0, 0.526);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1em auto;
+    overflow: auto;
+    padding: 0 4px;
+}
+.flexBtwn{
+    display: flex;
+    justify-content: space-between;
+}
+.notetitle{
+    align-self: flex-end;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.seperator{
+    margin-bottom: 0.5em;
+    margin-top: 0.3em;
+}
+/* notes */
+
 .imagewrap{
    position: relative;
 }
@@ -142,10 +298,12 @@ main {
     border: 2px solid black;
 }
 
+
 @media (max-width:984px){
       ul.navbar-nav{
         width: 100%;
-        display: block;
+        transition: all ease-in-out 0.5s;
+        
     }
 }
 @media (min-width:984px){
@@ -155,6 +313,12 @@ main {
         justify-content: space-around;
        }
 }
+@media (max-width:450px){
+    .hideOnSm{
+      display: none;
+    }
+}
+
 .contactMe{
     position: absolute;
     z-index: 55;
@@ -167,7 +331,7 @@ main {
 }
 .contactMe .card{ 
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(112, 160, 188);
+    background-color: hsl(205, 43%, 67%);
     box-shadow: inset 2px 2px 5px, inset -2px -2px 5px;
     line-height: 2.5;
     padding: 30px;
@@ -211,6 +375,7 @@ main {
     margin-bottom: 5px;
     background-color:#48718f ;
  }
+ 
 
  
 
