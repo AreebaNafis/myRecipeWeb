@@ -89,7 +89,7 @@ let notesDisplay = document.querySelector(".notesDisplay");
 // let localData = JSON.parse(localStorage.getItem("todos"));
 let notesList = JSON.parse(localStorage.getItem("todos")) || [];
 
-addBtn.addEventListener('click',()=>{
+const addBtnHandler= ()=>{
     if(titleI.value.trim().length>0 || inputI.value.trim().length>0){
         notesList.push({id: uuid(), note: inputI.value,title:titleI.value, isPinned: false});
     }
@@ -97,7 +97,9 @@ addBtn.addEventListener('click',()=>{
     inputI.value ="";
     localStorage.setItem("todos",JSON.stringify(notesList));
     showOthers.innerHTML =renderNotes(notesList);
-})
+}
+
+addBtn.addEventListener('click', addBtnHandler);
 
 const renderNotes=(List)=>{
     let newNote = List.map(({
@@ -150,6 +152,23 @@ notesDisplay.addEventListener('click',(event)=>{
 
 showOthers.innerHTML =renderNotes(notesList);
 
+// input field handler
+document.querySelectorAll('input').forEach( el => {
+    // console.log(el);
+    el.addEventListener('keydown', e => {
+        // console.log(e.key);
+        if(e.key === "Enter") {
+            let nextEl = el.nextElementSibling;
+            // console.log(nextEl)
+            if(nextEl.nodeName === 'INPUT') {
+                nextEl.focus();
+            }else{
+                addBtnHandler();
+            }
+        }
+    })
+})
+
 
 // recipe card
 
@@ -186,14 +205,14 @@ const renderRecipe = (currRecipeObject)=>{
     </div>
     <div class="recipeFooter col-12">
         <nav>
-            <ul class="pagination justify-content-center">
+            <ul class="pagination justify-content-center" data-bs-keyboard="true">
 
-                <li id="preRecBtn" class="pageitem"><button id="preRecBtn" class="disabled1"><span id="preRecBtn" class = "material-icons-outlined">arrow_back_ios</span>
+                <li id="preRecBtn" class="pageitem"><button data-bs-keyboard="true" id="preRecBtn" class="disabled1"><span id="preRecBtn" class = "material-icons-outlined">arrow_back_ios</span>
                 </button></li>
 
                 <li id="x" class="pageitem my-auto cPC"><span id="x" class="currPage">${currRecipeObject.name}</span></li>
 
-                <li class="pageitem" id ="nextRecBtn"><button  id ="nextRecBtn" class="disabled2" >
+                <li class="pageitem" id ="nextRecBtn"><button data-bs-keyboard="true" id ="nextRecBtn" class="disabled2" >
                     <span id ="nextRecBtn" class="material-icons-outlined"> arrow_forward_ios</span>
                 </button></li>
             </ul>
@@ -244,4 +263,21 @@ document.querySelector(".pagination").addEventListener('click',(e)=>{
     window.location.reload("true");
  }
 });
+
+window.addEventListener('keydown',(ev)=>{
+    if(ev.key==="ArrowRight"){
+        if(currRecipeId<9){
+        localStorage.setItem("recipeId",`${Number(currRecipeId)+1}`);
+        window.location.reload("true");
+    }
+    }
+    if(ev.key==="ArrowLeft"){
+        if(currRecipeId>1){
+        localStorage.setItem("recipeId",`${Number(currRecipeId)-1}`);
+        window.location.reload("true");
+        }
+    }
+})
+
+
 
