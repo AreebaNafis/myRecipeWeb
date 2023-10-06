@@ -277,7 +277,9 @@ window.addEventListener('keydown',(ev)=>{
         window.location.reload("true");
         }
     }
-})
+});
+
+$(window).on('resize', function (ev) { ev.preventBubble(); });
 
 
 
