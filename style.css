@@ -15,6 +15,7 @@ ul{
 /* recipe card styling */
 .ingredients, .instructions{
     margin-top: 2rem;
+
     text-align: justify;
 }
 .ingredients li{
@@ -44,8 +45,8 @@ ul{
 }
 .recipeCard{
     padding: 2rem;
-    background-color: aliceblue;
-    box-shadow: 1px 1px 4px #0f212e, -1px -1px 4px #0f212e;
+    background-color: rgba(146, 204, 255, 0.612);
+    box-shadow: 1px 1px 4px #4c6170ae, -1px -1px 4px #0f212e;
 }
 
 .recipeCard img{
