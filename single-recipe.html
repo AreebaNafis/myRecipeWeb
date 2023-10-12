@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Recipe Page</title>
         <!-- bootstrap stylesheet -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -30,7 +30,7 @@
        
         
     </head>
-<body data-bs-theme="light">
+<body data-bs-theme="light" class="single-rMain">
     <header >
         <nav style="background-color: #48718f;" class="navbar navbar-expand-lg fixed-top color" >
             <div class="container-fluid anicon">
@@ -71,11 +71,11 @@
     <main class="gradient-background " style="padding-top: 90px;padding-bottom: 70px;">
         <!-- Notes App -->
         <aside>
-            <span class="material-icons" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotes" aria-controls="offcanvasWithBothOptions">
+            <span class="material-icons" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotes" aria-controls="staticBackdrop">
                 arrow_forward_ios
                 </span>
         </aside>
-        <aside  class="offcanvas aside2 offcanvas-start"  id="offcanvasNotes" data-bs-scroll="true" tabindex="-1" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <aside  class="offcanvas aside2 offcanvas-start"  id="offcanvasNotes" data-bs-scroll="true" tabindex="-1" data-bs-backdrop="static"  aria-labelledby="staticBackdropLabel" data-bs-keyboard="true">
             <h5 class="offcanvas-header">
                 Notes
                 <span class="material-icons" data-bs-dismiss="offcanvas" aria-label="Close">

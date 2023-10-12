@@ -120,7 +120,7 @@ const renderNotes=(List)=>{
             </div>
         </div>
         <hr class="seperator">
-        <div class="flex" data-id="${id}">${note}</div>
+        <div class= data-id="${id}">${note}</div>
    </li>`)
    });
    newNote = newNote.join("");
@@ -175,13 +175,6 @@ document.querySelectorAll('input').forEach( el => {
 import {data} from "./data.js";
 
 const rCard = document.querySelector(".recipeCard");
-const rTi = document.querySelector(".rTi");
-const rImg = document.querySelector(".rImg");
-
-const prevRecBtn = document.querySelector(".prevRecBtn");
-const nextRecBtn = document.querySelector(".nextRecBtn");
-const currPage = document.querySelector(".currPage");
-
 const currRecipeId= localStorage.getItem("recipeId");
 
 const currRecipeObject = data.find((item)=>item.id===currRecipeId);
@@ -253,7 +246,6 @@ if(currRecipeId==="3"||currRecipeId==="6"||currRecipeId==="9"){
  }
 
 document.querySelector(".pagination").addEventListener('click',(e)=>{
- console.log(e.target.id);
  if(e.target.id==="nextRecBtn"){
     localStorage.setItem("recipeId",`${Number(currRecipeId)+1}`);
     window.location.reload("true");
@@ -264,7 +256,7 @@ document.querySelector(".pagination").addEventListener('click',(e)=>{
  }
 });
 
-window.addEventListener('keydown',(ev)=>{
+document.querySelector(".single-rMain").addEventListener('keydown',(ev)=>{
     if(ev.key==="ArrowRight"){
         if(currRecipeId<9){
         localStorage.setItem("recipeId",`${Number(currRecipeId)+1}`);
@@ -277,9 +269,16 @@ window.addEventListener('keydown',(ev)=>{
         window.location.reload("true");
         }
     }
+    if(ev.key==="ArrowDown"){
+        document.querySelector(".pagination").scrollIntoView();
+    }
+    if(ev.key==="ArrowUp"){
+        document.querySelector(".recipeHead").scrollIntoView();
+    }
 });
 
-$(window).on('resize', function (ev) { ev.preventBubble(); });
+
+
 
 
 
