@@ -192,6 +192,10 @@ main {
     border-bottom: none;
     padding: 0 4px;
 }
+.open{
+    display: block!important;
+    z-index: 1000;
+}
 .noteI{
     border: .5px solid rgba(0, 0, 0, 0.526);
     border-bottom-left-radius: 5%;

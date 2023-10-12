@@ -276,7 +276,11 @@ document.querySelector(".single-rMain").addEventListener('keydown',(ev)=>{
         document.querySelector(".recipeHead").scrollIntoView();
     }
 });
-
+window.addEventListener("resize",(ev)=>{
+    if(document.activeElement.type==="text"){
+        ev.stopPropagation();
+    }
+})
 
 
 
